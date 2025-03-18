@@ -3,7 +3,6 @@ kind: Rollout
 metadata:
   name: blue-green
   namespace: default
-  namespace: flask
 spec:
   replicas: 3
   strategy:
