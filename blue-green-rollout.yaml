@@ -8,7 +8,7 @@ spec:
   strategy:
     blueGreen:
       activeService: blue-green-service
-      previewService: blue-green-preview-service
+      previewService: blue-green-service-preview
       autoPromotionSeconds: 0
   selector:
     matchLabels:
