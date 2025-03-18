@@ -3,21 +3,21 @@ kind: Deployment
 metadata:
   name: my-app-blue
   labels:
-    app: my-app
+    app: blue-green
 spec:
   replicas: 3
   selector:
     matchLabels:
-      app: my-app
+      app: blue-green
       version: blue
   template:
     metadata:
       labels:
-        app: my-app
+        app: blue-green
         version: blue
     spec:
       containers:
-        - name: my-app
+        - name: blue-green
           image: ysufemrlty/my-basic-app:v2
 ---
 apiVersion: apps/v1
@@ -25,33 +25,33 @@ kind: Deployment
 metadata:
   name: my-app-green
   labels:
-    app: my-app
+    app: blue-green
 spec:
   replicas: 0  # initially no replicas, will scale when switching to green
   selector:
     matchLabels:
-      app: my-app
+      app: blue-green
       version: green
   template:
     metadata:
       labels:
-        app: my-app
+        app: blue-green
         version: green
     spec:
       containers:
-        - name: my-app
+        - name: blue-green
           image: ysufemrlty/my-basic-app:latest
 ---
 apiVersion: v1
 kind: Service
 metadata:
-  name: my-app-service
+  name: blue-green-service
 spec:
   selector:
-    app: my-app
+    app: blue-green
   ports:
     - protocol: TCP
       port: 80
       targetPort: 8080
-      nodePort: 30088
+      nodePort: 30090
   type: NodePort

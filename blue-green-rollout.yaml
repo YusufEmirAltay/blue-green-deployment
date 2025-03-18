@@ -1,23 +1,23 @@
 apiVersion: argoproj.io/v1alpha1
 kind: Rollout
 metadata:
-  name: my-app
+  name: blue-green
   namespace: flask
 spec:
   replicas: 3
   strategy:
     blueGreen:
-      activeService: my-app-service
-      previewService: my-app-preview-service
+      activeService: blue-green-service
+      previewService: blue-green-preview-service
       autoPromotionSeconds: 0
   selector:
     matchLabels:
-      app: my-app
+      app: blue-green
   template:
     metadata:
       labels:
-        app: my-app
+        app: blue-green
     spec:
       containers:
-        - name: my-app
+        - name: blue-green
           image: ysufemrlty/my-basic-app:latest
