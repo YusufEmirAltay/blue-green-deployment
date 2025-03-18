@@ -6,7 +6,7 @@ metadata:
 spec:
   selector:
     app: blue-green
-    version: green  # Burada versiyon değişikliğini yapıyoruz, green'e yönlendiriyoruz.
+    version: preview  # Burada versiyon değişikliğini yapıyoruz, green'e yönlendiriyoruz.
   ports:
     - protocol: TCP
       port: 80
