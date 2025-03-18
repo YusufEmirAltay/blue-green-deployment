@@ -2,6 +2,7 @@ apiVersion: apps/v1
 kind: Deployment
 metadata:
   name: my-app-blue
+  namespace: default
   labels:
     app: blue-green
 spec:
@@ -24,6 +25,7 @@ apiVersion: apps/v1
 kind: Deployment
 metadata:
   name: my-app-green
+  namespace: default
   labels:
     app: blue-green
 spec:
@@ -46,6 +48,7 @@ apiVersion: v1
 kind: Service
 metadata:
   name: blue-green-service
+  namespace: default
 spec:
   selector:
     app: blue-green
