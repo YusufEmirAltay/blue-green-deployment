@@ -1,0 +1,14 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: my-app-service
+spec:
+  selector:
+    app: my-app
+    version: green  # Burada versiyon değişikliğini yapıyoruz, green'e yönlendiriyoruz.
+  ports:
+    - protocol: TCP
+      port: 80
+      targetPort: 8080
+      nodePort: 30089
+  type: NodePort
