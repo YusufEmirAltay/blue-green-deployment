@@ -18,6 +18,7 @@ spec:
     metadata:
       labels:
         app: blue-green
+        version: preview
     spec:
       containers:
         - name: blue-green
