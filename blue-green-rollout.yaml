@@ -9,7 +9,7 @@ spec:
     blueGreen:
       activeService: blue-green-service
       previewService: blue-green-service-preview
-      autoPromotionSeconds: 0
+      autoPromotionEnabled: false
   selector:
     matchLabels:
       app: blue-green
