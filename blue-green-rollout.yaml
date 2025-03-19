@@ -13,6 +13,7 @@ spec:
   selector:
     matchLabels:
       app: blue-green
+      version: preview
   template:
     metadata:
       labels:
