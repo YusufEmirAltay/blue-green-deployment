@@ -22,4 +22,4 @@ spec:
     spec:
       containers:
         - name: blue-green
-          image: ysufemrlty/my-basic-app:latest
+          image: ysufemrlty/case24
