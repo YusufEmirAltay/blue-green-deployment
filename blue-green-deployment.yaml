@@ -12,3 +12,5 @@ spec:
       targetPort: 5000
       nodePort: 30090
   type: NodePort
+
+
